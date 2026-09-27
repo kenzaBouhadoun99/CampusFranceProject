@@ -21,8 +21,13 @@ namespace CampusFranceProject.StepDefinitions
         {
             var options = new EdgeOptions();
 
-            options.AddArgument("--headless=new");
+            options.AddArgument("--headless");
+            options.AddArgument("--no-sandbox");
             options.AddArgument("--disable-gpu");
+            options.AddArgument("--disable-dev-shm-usage");
+            options.AddArgument("--disable-extensions");
+            options.AddArgument("--no-first-run");
+            options.AddArgument("--no-default-browser-check");
             options.AddArgument("--window-size=1920,1080");
 
             driver = new EdgeDriver(options);
