@@ -19,33 +19,15 @@ namespace CampusFranceProject.StepDefinitions
         [BeforeScenario]
         public void BeforeScenario()
         {
-            var options = new EdgeOptions();
-
-            options.AddArgument("--headless");
-            options.AddArgument("--no-sandbox");
-            options.AddArgument("--disable-gpu");
-            options.AddArgument("--disable-dev-shm-usage");
-            options.AddArgument("--disable-extensions");
-            options.AddArgument("--no-first-run");
-            options.AddArgument("--no-default-browser-check");
-            options.AddArgument("--window-size=1920,1080");
-
-            string userDataDir = Path.Combine(
-                Path.GetTempPath(),
-                "EdgeSelenium_" + Guid.NewGuid().ToString()
-            );
-
-            options.AddArgument($"--user-data-dir={userDataDir}");
-            options.AddArgument("--remote-debugging-port=0");
-
-            driver = new EdgeDriver(options);
+            driver = new EdgeDriver();
+            driver.Manage().Window.Maximize();
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            driver?.Quit();
-            driver?.Dispose();
+            driver.Quit();
+            driver.Dispose();
         }
 
         // ============================================================
