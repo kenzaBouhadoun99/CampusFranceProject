@@ -1,0 +1,33 @@
+﻿{
+  "commun": {
+    "civilite": "Madame",
+    "nom": "Bouhadoun",
+    "prenom": "Kenza",
+    "pays_residence": "France",
+    "nationalite": "Algérienne",
+    "code_postal": "95220",
+    "ville": "Herblay",
+    "telephone": "0612345678"
+  },
+
+  "profils": {
+    "chercheur": {
+      "email": "kenza.chercheur@example.com",
+      "mot_de_passe": "Test@123456",
+      "confirmation_mot_de_passe": "Test@123456",
+      "type_profil": "Chercheur",
+      "domaine": "Informatique",
+      "niveau_etudes": "Doctorat"
+    },
+
+    "institutionnel": {
+      "email": "kenza.institutionnel@example.com",
+      "mot_de_passe": "Test@123456",
+      "confirmation_mot_de_passe": "Test@123456",
+      "type_profil": "Institutionnel",
+      "fonction": "Responsable des relations internationales",
+      "type_organisme": "Université",
+      "nom_organisme": "Université de Lorraine"
+    }
+  }
+}
