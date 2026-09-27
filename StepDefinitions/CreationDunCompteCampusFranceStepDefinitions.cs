@@ -19,15 +19,20 @@ namespace CampusFranceProject.StepDefinitions
         [BeforeScenario]
         public void BeforeScenario()
         {
-            driver = new EdgeDriver();
-            driver.Manage().Window.Maximize();
+            var options = new EdgeOptions();
+
+            options.AddArgument("--headless=new");
+            options.AddArgument("--disable-gpu");
+            options.AddArgument("--window-size=1920,1080");
+
+            driver = new EdgeDriver(options);
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            driver.Quit();
-            driver.Dispose();
+            driver?.Quit();
+            driver?.Dispose();
         }
 
         // ============================================================
