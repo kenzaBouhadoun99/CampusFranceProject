@@ -10,7 +10,7 @@
 
         stage('Tests') {
             steps {
-                bat 'dotnet test --no-build'
+                bat 'dotnet test --no-build' 
             }
         }
     }
