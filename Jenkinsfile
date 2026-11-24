@@ -13,5 +13,13 @@ pipeline {
                 bat 'dotnet test --no-build'   
             }
         }
+        post {
+            always {
+                allure([
+                    includeProperties: false,
+                    results: [[path: 'allure-results']]
+                ])
+            }
+        }
     }
 }
