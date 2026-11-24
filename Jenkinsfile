@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -10,16 +11,17 @@ pipeline {
 
         stage('Tests') {
             steps {
-                bat 'dotnet test --no-build'   
+                bat 'dotnet test --no-build'
             }
         }
-        post {
-            always {
-                allure([
-                    includeProperties: false,
-                    results: [[path: 'allure-results']]
-                ])
-            }
+    }
+
+    post {
+        always {
+            allure([
+                includeProperties: false,
+                results: [[path: 'allure-results']]
+            ])
         }
     }
 }
